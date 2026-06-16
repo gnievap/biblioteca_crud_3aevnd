@@ -2,6 +2,7 @@ from dao.libro_dao import LibroDAO
 from models.libro import Libro
 
 def main():
+    print("Bibliotca universitaria")
     try:
         libro_dao = LibroDAO()
         libros = libro_dao.obtener_libros()
