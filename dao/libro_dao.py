@@ -38,7 +38,7 @@ class LibroDAO:
         conexion= Conexion.obtener_conexion()
         cursor = conexion.cursor()
 
-        sql = """"
+        sql = """
         INSERT INTO libro(titulo, autor, isbn, disponible)
         VALUES (%s, %s, %s, %s)
         """
