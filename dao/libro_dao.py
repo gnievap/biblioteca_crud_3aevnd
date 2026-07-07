@@ -88,3 +88,15 @@ class LibroDAO:
         cursor.close()
         conexion.close()
 
+    def obtener_ultimo_id():
+        conexion = Conexion.obtener_conexion()
+        cursor = conexion.cursor()
+
+        cursor.execute("SELECT id_libro FROM libro order by id_libro desc")
+        resultado = cursor.fetchone()
+
+        cursor.close()
+        conexion.close()
+        return resultado
+
+

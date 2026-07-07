@@ -1,5 +1,7 @@
 from dao.libro_dao import LibroDAO
+from dao.usuario_dao import UsuarioDAO
 from models.libro import Libro
+from models.usuario import Usuario
 
 def ver_todo(libro_dao):
     try:
@@ -50,8 +52,9 @@ def eliminar_libro(libro_dao):
     ver_todo(libro_dao)
 
 
-def main():
-    print("=== Bibliotca universitaria === ")
+
+
+def menu_libros():
     libro_dao = LibroDAO()
     
     # Imprime el menú de opciones
@@ -67,6 +70,38 @@ def main():
         case 2: insertar_libro(libro_dao)
         case 3: actualizar_libro(libro_dao)
         case 4: eliminar_libro(libro_dao)
+
+
+def menu_usuarios():
+    usuario_dao = UsuarioDAO()
+    
+    # Imprime el menú de opciones
+    print("1. Ver todos los usuarios")
+    print("2. Insertar nuevo usuario")
+    print("3. Actualizar un usuario existente")
+    print("4. Eliminar un usuario exstente")
+
+    opcion = int(input("Escribe una opcion (1-4): "))
+
+    match opcion:
+        case 1: ver_usuarios(usuario_dao)
+        case 2: insertar_usuario(usuario_dao)
+        case 3: actualizar_usuario(usuario_dao)
+        case 4: eliminar_usuario(usuario_dao)
+
+
+def main():
+    print("=== Bibliotca universitaria === ")
+    print("== Menú de opciones ==")
+    print("1. Gestión de libros")
+    print("2. Gestión de usuarios")
+
+    opcion = int(input("Escribe tu opción: "))
+
+    match opcion:
+        case 1: menu_libros()
+        case 2: menu_usuarios()
+    
 
     
 
