@@ -73,7 +73,8 @@ def main_window(page: ft.Page):
                     "Devoluciones",
                     icon = ft.Icons.KEYBOARD_RETURN,
                     width = 180
-                ),                                               
+                ), 
+                # Agregar más botones                                              
             ],
             spacing = 15
         )
