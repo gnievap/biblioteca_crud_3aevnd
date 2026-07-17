@@ -1,6 +1,7 @@
 import flet as ft
 
 from ui.libro_form import libro_form
+from ui.libros_list import libros_list
 
 def main_window(page: ft.Page):
     #definir configuracion de la página principal
@@ -46,6 +47,10 @@ def main_window(page: ft.Page):
         contenido.content = libro_form(mostrar_inicio)
         page.update()
 
+    def mostrar_lista_libros(e=None):
+        contenido.content = libros_list(mostrar_inicio)
+        page.update()
+
     # menu lateral
     menu_lateral = ft.Container(
         width = 220,
@@ -76,7 +81,7 @@ def main_window(page: ft.Page):
                     "Libros",
                     icon = ft.Icons.BOOK,
                     width = 180,
-                    on_click = mostrar_insertar_libro
+                    on_click = mostrar_lista_libros
                 ),
                 ft.ElevatedButton(
                     "Usuarios",
