@@ -39,9 +39,9 @@ def libros_list(regresar):
             mensaje.value =f"Error al consultar libros:{error}"
             mensaje.color = ft.Colors.RED
         
-        cargar_libros()
+    cargar_libros()
 
-        return ft.Container(
+    return ft.Container(
             padding = 30,
             content = ft.Column(
                 controls = [
@@ -72,7 +72,7 @@ def libros_list(regresar):
 
                     ft.Container(
                         content = tabla,
-                        border = ft.border.all(
+                        border = ft.Border.all(
                             1,
                             ft.Colors.BLUE_GREY_200
                         ),
